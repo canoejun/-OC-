@@ -1,0 +1,374 @@
+{\rtf1\ansi\ansicpg936\cocoartf1561\cocoasubrtf400
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset134 PingFangSC-Regular;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c0\c0;\csgenericrgb\c100000\c100000\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25100\viewh13640\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs64 \cf0 OC
+\f1 \'b8\'b4\'cf\'b0
+\f0 \
+1. C 
+\f1 \'ba\'cd
+\f0  OC 
+\f1 \'b1\'e0\'b3\'cc\'cb\'bc\'cf\'eb\'b5\'c4\'c7\'f8\'b1\'f0\
+	C\'a3\'ba\'c3\'e6\'cf\'f2\'b9\'fd\'b3\'cc A -> B -> C\
+	OC: \'d3\'d0\'ca\'b2\'c3\'b4\'c0\'e0 \'c0\'e0\'c0\'ef\'c3\'e6\'d3\'d0\'ca\'b2\'c3\'b4\'ca\'f4\'d0\'d4\'ba\'cd\'b7\'bd\'b7\'a8 \'b6\'a8\'d2\'e5\'ca\'b2\'c3\'b4\'b6\'d4\'cf\'f3 \'b5\'f7\'d3\'c3\'b6\'d4\'cf\'f3\'c0\'ef\'c3\'e6\'b5\'c4\'c4\'c7\'d0\'a9\'b7\'bd\'b7\'a8\
+	\
+	@\'b1\'ed\'ca\'be\'d2\'bb\'b8\'f6\'b6\'d4\'cf\'f3 @1 NSNumber  @\'a1\'b0123\'a1\'b1 NSString   @[] NSArray  @\{\}NSDictionary\
+	@\'b1\'ed\'ca\'be\'b9\'d8\'bc\'fc\'d7\'d6 @interface @end @property @implementation @protocol @class   	@private @public @protected @required @optional @autoreleasepool\
+	\
+	for( Person *p  in personsArray )\{\
+	\}\
+\
+	BOOL YES  NO\
+	SEL @selector()\
+	NULL nil  \
+	void * int* char *\
+	id \
+	\
+2. \'c0\'e0\'b5\'c4\'c9\'f9\'c3\'f7\
+	@interface Person : NSObject \{\
+			//\'b3\'c9\'d4\'b1\'b1\'e4\'c1\'bf\
+			@protected //\'c4\'ac\'c8\'cf\
+			NSString *name;\
+			@private //\'cb\'bd\'d3\'d0 \'d7\'d3\'c0\'e0\'ce\'de\'b7\'a8\'bc\'cc\'b3\'d0\
+			@public //\'b9\'b2\'d3\'d0 \'cd\'e2\'b2\'bf\'bf\'c9\'d2\'d4\'d6\'b1\'bd\'d3\'b7\'c3\'ce\'ca p->age\
+			int age;\
+	\}	\
+\
+	- \'b6\'d4\'cf\'f3\'b7\'bd\'b7\'a8  \'ca\'b5\'c0\'fd\'b7\'bd\'b7\'a8 \'b1\'d8\'d0\'eb\'ca\'b5\'c0\'fd\'bb\'af\'c4\'b3\'d2\'bb\'b8\'f6\'be\'df\'cc\'e5\'b5\'c4\'b6\'d4\'cf\'f3\'b2\'c5\'c4\'dc\'b5\'f7\'d3\'c3\
+   + \'c0\'e0\'b7\'bd\'b7\'a8 \'ce\'de\'d0\'e8\'ca\'b5\'c0\'fd\'bb\'af\'d5\'e2\'b8\'f6\'b6\'d4\'cf\'f3 \'d6\'b1\'bd\'d3\'d3\'c3\'d5\'e2\'b8\'f6\'c0\'e0\'c0\'b4\'b5\'f7\'d3\'c3\
+				      \'c0\'e0\'b7\'bd\'b7\'a8\'c0\'ef\'c3\'e6\'b2\'bb\'c4\'dc\'d6\'b1\'bd\'d3\'b5\'f7\'d3\'c3\'c0\'e0\'c0\'ef\'c3\'e6\'b5\'c4\'b3\'c9\'d4\'b1\'a1\'a2\'ca\'f4\'d0\'d4\'b1\'e4\'c1\'bf \'ca\'b5\'c0\'fd\'b7\'bd\'b7\'a8\
+	- (void)test;\
+	- (void)test:(int)age;\
+	- (void)test:(int)age andName:(NSString *)name;\
+	@end\
+\
+	@implementation Person\
+	- (void)test\{\
+		[self doSomething];\
+	\}\
+	//\'cb\'bd\'d3\'d0\
+	- (void)doSomething\{\
+	\}\
+	@end\
+\
+	//\'b4\'b4\'bd\'a8\'b6\'d4\'cf\'f3\
+	Person *p = [Person new];\
+	Person *p = [ [Person alloc] init];\
+\
+	//\'b7\'bd\'b7\'a8\'b5\'c4\'b5\'f7\'d3\'c3\
+	[p test];\
+\
+3.  Property\'ca\'f4\'d0\'d4\'b1\'e4\'c1\'bf\'b5\'c4\'c9\'f9\'c3\'f7\'ba\'cd\'b5\'f7\'d3\'c3\
+	1.\'c9\'f9\'c3\'f7\'d2\'bb\'b8\'f6\'b3\'c9\'d4\'b1\'b1\'e4\'c1\'bf _name;\
+	2.\'c9\'f9\'c3\'f7set\'b7\'bd\'b7\'a8 - (void) setName:(NSString *)name;\
+	3.\'c9\'f9\'c3\'f7get\'b7\'bd\'b7\'a8 - (NSString *)name;\
+	4.set/get\'b7\'bd\'b7\'a8\'b5\'c4\'ca\'b5\'cf\'d6\
+	@property (nonatomic,  strong) NSString *name;\
+	\
+	property\'ca\'f4\'d0\'d4\'b1\'e4\'c1\'bf\'b5\'c4\'b5\'f7\'d3\'c3\
+	Person *p = [Person new];\
+	p.name = @\'a1\'b0jack\'a1\'b1;\
+	[p setName:@\'a1\'b0jack\'a1\'b1];\
+\
+	\'b9\'d8\'bc\'fc\'d7\'d6\
+	atomic\
+	nonatomic\
+	strong \'c7\'bf\'d2\'fd\'d3\'c3 \
+	retain  [p retain];\
+	copy \
+	weak \'c8\'f5\'d2\'fd\'d3\'c3  \'b2\'bb\'d2\'fd\'d3\'c3\
+	assign \'d0\'de\'ca\'ceC\'d3\'ef\'d1\'d4\'b5\'c4\'bb\'f9\'b1\'be\'ca\'fd\'be\'dd\'c0\'e0\'d0\'cd \'b7\'c0\'d6\'b9\'d1\'ad\'bb\'b7\'d2\'fd\'d3\'c3 id<> delegate\
+	readonly readwrite\
+	setter = funcName:\
+	getter = \
+\
+	property\'ca\'f4\'d0\'d4\'b5\'c4set get\'b7\'bd\'b7\'a8\'b5\'c4\'ca\'b5\'cf\'d6\
+	1.\'d6\'d8\'d0\'b4set\'b7\'bd\'b7\'a8 \'b5\'da\'d2\'bb\'ca\'b1\'bc\'e4\'d6\'aa\'b5\'c0\'ce\'d2\'b5\'c4\'ca\'fd\'be\'dd\'b8\'c4\'b1\'e4\'c1\'cb\
+		- (void)setName:(NSString *)aName\{\
+				if (_name != aName)\{\
+						[_name release];\
+						_name = [aName retain];\
+				\}\
+				//\'d7\'f6\'b5\'e3\'d7\'d4\'bc\'ba\'b5\'c4\'ca\'c2\'c7\'e9\
+				//\'bd\'e2\'ce\'f6\'ca\'fd\'be\'dd\
+		\}\
+	2.\'d6\'d8\'d0\'b4get\'b7\'bd\'b7\'a8 \'b5\'da\'d2\'bb\'ca\'b1\'bc\'e4\'d6\'aa\'b5\'c0\'d0\'e8\'d2\'aa\'b7\'c3\'ce\'ca\'d5\'e2\'b8\'f6\'ca\'fd\'be\'dd\'c1\'cb\
+		lazyload\
+		- (NSString *)name\{\
+				if (_name == nil)\{\
+						self.name = [NSString new];\
+				\}\
+				return _name;\
+		\}\
+\
+\
+4. \'d7\'d4\'b6\'a8\'d2\'e5init\'b7\'bd\'b7\'a8\
+	1. \'d6\'d8\'d0\'b4NSObject\'cc\'e1\'b9\'a9\'b5\'c4init\'b7\'bd\'b7\'a8\
+		\'d3\'c5\'b5\'e3\'a3\'ba\'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f6\'b6\'d4\'cf\'f3\'d6\'ae\'ba\'f3 \'d5\'e2\'b8\'f6\'b6\'d4\'cf\'f3\'b5\'c4\'ca\'f4\'d0\'d4\'be\'cd\'d3\'d0\'b3\'f5\'ca\'bc\'d6\'b5\'c1\'cb\
+		\'c8\'b1\'b5\'e3\'a3\'ba\'d5\'e2\'b8\'f6\'b3\'f5\'ca\'bc\'d6\'b5\'cd\'e2\'b2\'bf\'ce\'de\'b7\'a8\'b8\'c4\'b1\'e4\
+	- (instancetype)init\{\
+		self = [super init];\
+		if (self != nil)\{\
+				//\'b8\'f8\'ca\'f4\'d0\'d4\'b8\'b3\'d6\'b5\
+				self.name = @\'a1\'b0jack\'a1\'b1;\
+\
+				//\'bd\'e7\'c3\'e6\'b5\'c4\'d7\'bc\'b1\'b8\'b9\'a4\'d7\'f7\
+		\}\
+		return self;\
+	\}\
+\
+	2. initWith\
+	- (instancetype)initWithName:(NSString *)aName andAge:(int)aAge\{\
+			self = [super init];\
+			if(self != nil)\{\
+					self.name = aName;\
+					self.age = aAge;\
+			\}\
+			return self;\
+	\}\
+\
+5. \'c4\'da\'b4\'e6\'b9\'dc\'c0\'ed	\
+		1.  ARC reference counting \'d2\'fd\'d3\'c3\'bc\'c6\'ca\'fd\'bb\'fa\'d6\'c6\
+		2. MRR\
+		\
+		
+\fs60 \'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f6\'b6\'d4\'cf\'f3\'d6\'ae\'ba\'f3\'a3\'ac\'d5\'e2\'b8\'f6\'b6\'d4\'cf\'f3\'d3\'d0\'d2\'bb\'b8\'f6\'ca\'f4\'d0\'d4\'b1\'e4\'c1\'bfretainCount\'bc\'c7\'c2\'bc\'d5\'e2\'b8\'f6\'b6\'d4\'cf\'f3\'b5\'c4\'d3\'b5\'d3\'d0\'d5\'df\'b5\'c4\'b8\'f6\'ca\'fd\
+		\'b4\'d3\'b6\'d4\'cf\'f3\'b5\'c4\'d3\'b5\'d3\'d0\'c8\'a8\'b5\'c4\'bd\'c7\'b6\'c8\'c8\'a5\'bf\'bc\'c2\'c7\'c4\'da\'b4\'e6\'b9\'dc\'c0\'ed\
+\
+		1.\'ca\'b2\'c3\'b4\'ca\'b1\'ba\'f2\'d3\'b5\'d3\'d0\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 			retainCount = 1;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 			alloc copy new mutableCopy \
+			\
+			\'ca\'b9\'d3\'c3strong\'bb\'f2\'d5\'dfretain\'c9\'ea\'c3\'f7\'b6\'d4\'b2\'bb\'ca\'c7\'d7\'d4\'bc\'ba\'b4\'b4\'bd\'a8\'b5\'c4\'b6\'d4\'cf\'f3\'b5\'c4\'d3\'b5\'d3\'d0\'c8\'a8\
+			retainCount  +1\
+\
+		2. \'b2\'bb\'d0\'e8\'d2\'aa\'be\'cd\'ca\'cd\'b7\'c5\'a3\'a8\'b2\'bb\'ca\'c7\'ca\'cd\'b7\'c5\'b6\'d4\'cf\'f3 \'ca\'cd\'b7\'c5\'d3\'b5\'d3\'d0\'c8\'a8\'a3\'a9\
+			release \'c1\'a2\'bf\'cc\'ca\'cd\'b7\'c5\
+			autorelease \'d1\'d3\'b3\'d9\'ca\'cd\'b7\'c5 -> autoreleasepool\
+\
+		3. \'b2\'bb\'c4\'dc\'ca\'cd\'b7\'c5\'c3\'bb\'d3\'d0\'d3\'b5\'d3\'d0\'c8\'a8\'b5\'c4\'b6\'d4\'cf\'f3\
+			NSString *str = [NSString string];\
+			[str release];\
+\
+		4. dealloc \'b5\'b1\'d2\'bb\'b8\'f6\'b6\'d4\'cf\'f3\'b5\'c4retainCount\'ce\'aa0 \'cf\'b5\'cd\'b3\'bb\'e1\'d7\'d4\'b6\'af\'cf\'fa\'bb\'d9\'d5\'e2\'b8\'f6\'b6\'d4\'cf\'f3 \'d4\'da\'cf\'fa\'bb\'d9\'d6\'ae\'c7\'b0\
+					      \'cf\'c8\'c8\'a5\'b5\'f7\'d3\'c3\'d5\'e2\'b8\'f6\'b6\'d4\'cf\'f3\'b5\'c4dealloc\'b7\'bd\'b7\'a8 \'c8\'c3\'d5\'e2\'b8\'f6\'b6\'d4\'cf\'f3\'ca\'cd\'b7\'c5\'d7\'d4\'bc\'ba\'b5\'c4\'d7\'ca\'d4\'b4\
+			\
+			\'d2\'bb\'b8\'f6\'b6\'d4\'cf\'f3\'b5\'c4\'ca\'f4\'d0\'d4\'b1\'e4\'c1\'bf \'c8\'e7\'b9\'fb\'ca\'b9\'d3\'c3\'c1\'cb retain strong copy \'be\'cd\'d3\'a6\'b8\'c3\'d4\'dadealloc\'c0\'ef\'c3\'e6\'ca\'cd\'b7\'c5\
+			\'ca\'f4\'d0\'d4\'b1\'e4\'c1\'bf\'b5\'c4\'d7\'f7\'d3\'c3\'d3\'f2\'ca\'c7\'c8\'ab\'be\'d6 \'ca\'c7\'d5\'fb\'b8\'f6\'b6\'d4\'cf\'f3 \'b5\'b1\'d5\'e2\'b8\'f6\'b6\'d4\'cf\'f3\'b1\'bb\'cf\'fa\'bb\'d9\'b5\'c4\'ca\'b1\'ba\'f2 \'b2\'c5\'c4\'dc\'b9\'bb\'c8\'a5\'ca\'cd\'b7\'c5\
+\
+			- (void)dealloc\{\
+					[self.name release];\
+\
+					[super dealloc];\
+			\}\
+\
+5. Foundation\'bf\'f2\'bc\'dc\'b5\'c4\'bb\'f9\'b1\'be\'c0\'e0\'d0\'cd\
+		NSString \'b2\'bb\'bf\'c9\'b1\'e4\'d7\'d6\'b7\'fb\'b4\'ae\
+			1. NSString *str = @\'a1\'b0jack\'a1\'b1;\
+			2. NSString *str = [NSString stringWithString:str1];\
+			3. NSString *str = [NSString stringWithFormat:@\'a1\'b0my name is %@\'a1\'b1, name];\
+			4. length \
+			5. substringToIndex:i\
+				 substringFromIndex;\
+		       substringWithRange:\
+				typedef struct \{\
+						NSUInteger location,\
+						NSUInteger length\
+				\} NSRange;\
+				NSMakeRange(1,23);\
+\
+				typedef struct \{\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 						CGFloat x,\
+						CGFloat y\
+				\} CGPonint;\
+				NSMakePoint(10,10);\
+\
+				typedef struct \{\
+						CGFloat width,\
+						CGFloat height\
+				\} CGSize;\
+				NSMakeSize(200,200);\
+\
+			typedef struct \{\
+						CGPoint origin,\
+						CGSize size\
+				\} CGRect;\
+			CGRectMake(10,10,200,200)\
+			\
+			6. containsString\
+			7. isEqualToString\
+			8. compare  \
+			9. hasPrefix \'c7\'b0\'d7\'ba\
+			10.hasSuffix \'ba\'f3\'d7\'ba\
+			11. rangeOfString\
+			12. intValue boolValue\
+		\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 		NSMutableString \'a3\'baNSString \'bf\'c9\'b1\'e4\'d7\'d6\'b7\'fb\'b4\'ae\
+			1. stringWithCapacity\'a3\'ba7\
+			2.insertString:AtIndex:\
+			3.appendString\
+			4.appendFormat\
+			5.
+\f2\fs54 \cf2 \cb3 deleteCharactersInRange\
+			6.replaceCharactersInRange:withString:\
+			7.setString:\
+\
+		NSArray 
+\f1 \'b2\'bb\'bf\'c9\'b1\'e4\'ca\'fd\'d7\'e9
+\f2  
+\f1 \'d6\'bb\'c4\'dc\'b4\'e6\'b7\'c5OC\'b5\'c4\'b6\'d4\'cf\'f3\'c0\'e0\'d0\'cd\
+		NSMutableArray \'bf\'c9\'b1\'e4\'ca\'fd\'d7\'e9\
+	\
+		\'be\'a1\'c1\'bf\'c8\'c3\'d2\'bb\'b8\'f6\'ca\'fd\'d7\'e9\'b4\'e6\'b7\'c5\'cd\'ac\'d2\'bb\'d6\'d6\'c0\'e0\'d0\'cd\'b5\'c4\'b6\'d4\'cf\'f3\
+		\'ca\'b9\'d3\'c3NSNumber NSValue\'bd\'f8\'d0\'d0\'b7\'e2\'d7\'b0\
+\
+			NSArray *arr = @[@1, @1];\
+			NSArray *arr = [NSArray arrayWithObject];\
+			arrayWithObject\
+			arrayWithObjects\
+			arrayWithArray\
+			count\
+			[arr objectAtIndex:3];\
+			[arr indexOfObject:@1];\
+			[arr containsObject:@1];\
+			[arr firstObject];\
+			[arr lastObject];\
+			\
+			NSMutableArray\
+			[arr addObject:@2];\
+			[arr insertObject:@1 atIndex:3];\
+			[arr removeObject:@1]\'a3\'bb\
+			[arr removeObjectAtIndex:0];\
+			[arr removeAllObject];\
+			[arr setArray:@[]];\
+			[arr exchangeObjectAtIndex:2 withObjectAtIndex:4];\
+			[arr 
+\f2 replaceObjectAtIndex:0 withObject:@3
+\f1 ];\
+\
+	NSDictionary    key - value  \'c3\'bb\'d3\'d0\'cb\'b3\'d0\'f2 key\'b1\'d8\'d0\'eb\'ce\'a8\'d2\'bb\
+	NSMutableDictionary\
+\
+			NSDictionary *dic = @\{@\'a1\'b0key\'a1\'b1:@\'a1\'b0value\'a1\'b1, @\'a1\'b0key1\'a1\'b1:@\'a1\'b0value\'a1\'b1\};\
+			[dic count];\
+			[dic objectForKey:@\'a1\'b0key\'a1\'b1];\
+			[dic allKeys];\
+			[dic allValues];\
+\
+			NSMutableDictionary\
+			[dic setObject:@\'a1\'b03\'a1\'b1 forKey:@\'a1\'b0key\'a1\'b1];\
+			[dic removeObjectForkey:@\'a1\'b0key\'a1\'b1];\
+			[dic 
+\f2 removeAllObjects
+\f1 ]\
+	\
+7. Protocol\'d0\'ad\'d2\'e9\
+	\'d3\'c3\'d3\'da\'b6\'a8\'d2\'e5\'d2\'bb\'cc\'d7\'b7\'bd\'b7\'a8 \'d6\'bb\'c9\'ea\'c3\'f7 \'b2\'bb\'ca\'b5\'cf\'d6 \'cb\'ad\'b7\'fe\'b4\'d3 \'cb\'ad\'ca\'b5\'cf\'d6\
+	@protocol Test <NSObject>\
+		@required\
+		@optional\
+	@end\
+\
+	@interface Person : NSObject <Test>\
+	@end\
+\
+8. \'ca\'b9\'d3\'c3\'d0\'ad\'d2\'e9\'ca\'b5\'cf\'d6\'ca\'fd\'be\'dd\'b5\'c4\'bb\'d8\'b5\'f7\
+	1. \'d6\'b5\'b4\'ab\'b5\'dd \'d6\'aa\'b5\'c0\'b6\'d4\'cf\'f3 \'d6\'b1\'bd\'d3\'cd\'a8\'b9\'fd\'b6\'d4\'cf\'f3\'b5\'c4\'b7\'bd\'b7\'a8\'bb\'f2\'d5\'df\'ca\'f4\'d0\'d4\
+	2. \'c8\'e7\'b9\'fb\'b2\'bb\'d6\'aa\'b5\'c0\'b6\'d4\'cf\'f3\
+			1.delegate	\
+					1.\'b6\'a8\'d2\'e5\'d2\'bb\'cc\'d7\'d0\'ad\'d2\'e9 \
+					2.\'b6\'a8\'d2\'e5\'d2\'bb\'b8\'f6id<Test> delegate \'d3\'c3\'d3\'da\'bc\'c7\'c2\'bc\'ca\'fd\'be\'dd\'b7\'b5\'bb\'d8\'b8\'f8\'cb\'ad\
+					3.\'cd\'ea\'b3\'c9\'cc\'d8\'b6\'a8\'b5\'c4\'b9\'a6\'c4\'dc \'ca\'b5\'cf\'d6\'ca\'fd\'be\'dd\'bb\'d8\'b5\'f7\
+							\'c5\'d0\'b6\'cf\'bd\'d3\'ca\'d5\'d5\'df \'ca\'c7\'b7\'f1\'ca\'b5\'cf\'d6\'c1\'cb\'d0\'ad\'d2\'e9\'c0\'ef\'c3\'e6\'b5\'c4\'b7\'bd\'b7\'a8 respondsToSelector\
+							[self.delegate didFinished:@\'a1\'b033\'a1\'b1];\
+					4.\'bd\'d3\'ca\'d5\'ca\'fd\'be\'dd\'b5\'c4\'b6\'d4\'cf\'f3\'b7\'fe\'b4\'d3\'d0\'ad\'d2\'e9 \'ca\'b5\'cf\'d6\'d0\'ad\'d2\'e9\'c0\'ef\'c3\'e6\'b5\'c4\'b7\'bd\'b7\'a8\
+					5.\'b5\'f7\'d3\'c3\'d5\'df\'b1\'d8\'d0\'eb\'c9\'e8\'d6\'c3delegate\'b6\'d4\'cf\'f3\'b5\'c4\'d6\'b5\
+			2.block\
+					void (^block)(int); \'b6\'a8\'d2\'e5block\'c0\'e0\'d0\'cd\
+					block bb = ^(int a)\{\
+							//\'be\'df\'cc\'e5\'b7\'b5\'bb\'d8\'c0\'b4\'d6\'b4\'d0\'d0\'b5\'c4\'b4\'fa\'c2\'eb\'bf\'e9\
+					\}\'a3\'bb\
+					bb(10);\
+\
+					void (^block)(int) = ^(int a)\{\
+							//\'d7\'f6\'be\'df\'cc\'e5\'ca\'c2\'c7\'e9\
+					\}\'a3\'bb	\
+					block(20);\
+\
+					typedef void (^CallBack)(NSData *data);\
+					\
+					- (void)test:(int)age andBlock:(CallBack)block\{\
+							block(data);\
+					\}\
+\
+					void (^bb)(NSData *) = ^(NSData *data)\{\
+							//	\
+					\}\
+					[p test:20 andBlock:bb];\
+\
+					[p test:20 andBlock:^(NSData *data)\{\
+							///\
+					\}];\
+\
+					\'d4\'daARC block\'b4\'b4\'bd\'a8\'d6\'ae\'ba\'f3\'d7\'d4\'b6\'af\'b1\'bbcopy\'d2\'bb\'b7\'dd \'b6\'d1\'c9\'cf\
+					__block int a = 0;\
+					void (^nn)(void) = ^\{\
+							a = 20;\
+					\}\
+\
+					\'d4\'daOC\'b5\'c4\'b6\'d4\'cf\'f3\'c0\'ef\'c3\'e6\'ca\'b9\'d3\'c3\'c1\'cbblock\
+					\'c8\'e7\'b9\'fbblock\'b7\'c3\'ce\'ca\'cd\'e2\'b2\'bf\'b5\'c4\'b6\'d4\'cf\'f3 \'c4\'c7\'c3\'b4\'d5\'e2\'b8\'f6\'b6\'d4\'cf\'f3\'b5\'c4\'d2\'fd\'d3\'c3\'bc\'c6\'ca\'fd+1\
+					__weak typeof(self) weakSelf = self;\
+					void (^ddd)(void) = ^\{\
+							weakSelf.name = @\'a1\'b0jack\'a1\'b1;//block\'bb\'e1\'b6\'d4\'b5\'b1\'c7\'b0\'d5\'e2\'b8\'f6\'b6\'d4\'cf\'f3\'c7\'bf\'d2\'fd\'d3\'c3 pxd + 1\'a3\'bb\
+					\};\
+\
+			\
+9. Category \'c0\'e0\'b1\'f0\
+			\'cf\'f2\'d2\'d1\'be\'ad\'b4\'e6\'d4\'da\'b5\'c4\'c0\'e0\'c0\'ef\'c3\'e6\'cc\'ed\'bc\'d3\'b7\'bd\'b7\'a8 - > category  \'bc\'cc\'b3\'d0\
+			\'cf\'f2\'d2\'d1\'be\'ad\'b4\'e6\'d4\'da\'b5\'c4\'c0\'e0\'c0\'ef\'c3\'e6\'cd\'ac\'ca\'b1\'cc\'ed\'bc\'d3\'ca\'f4\'d0\'d4 -> \'bc\'cc\'b3\'d0\
+			\
+			\'d4\'da\'cd\'b7\'ce\'c4\'bc\'fe\'c0\'ef\'c3\'e6\'c9\'f9\'c3\'f7\'b5\'c4\'c0\'e0\'b1\'f0 \'bf\'c9\'d2\'d4\'b2\'bb\'d3\'c3\'d4\'d9\'ca\'b5\'cf\'d6\'ce\'c4\'bc\'fe\'c0\'ef\'c3\'e6\'ca\'b5\'cf\'d6 \'b5\'b1\'ca\'b9\'d3\'c3\'b5\'c4\'ca\'b1\'ba\'f2\'d4\'d9\'c8\'a5\'ca\'b5\'cf\'d6\
+			\'d2\'bb\'b8\'f6\'b5\'d8\'b7\'bd\'c9\'ea\'c3\'f7 \'b6\'e0\'b8\'f6\'b5\'d8\'b7\'bd\'ca\'b5\'cf\'d6\
+\
+	@interface NSString (TimeString)	@end\
+\
+	@implementation NSString (TimeString)\
+	@end\
+\
+	extension .m\
+	@interface NSString ()\
+	\'cb\'bd\'d3\'d0\'ca\'f4\'d0\'d4\'bb\'f2\'b7\'bd\'b7\'a8\
+	@end\
+\
+\
+\
+		
+\fs60 \cf0 \cb1 \
+		
+\fs64 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
